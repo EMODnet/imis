@@ -1,4 +1,4 @@
-# worms
+# imis
 
 R client for IMIS
 
