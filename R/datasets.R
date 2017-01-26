@@ -37,3 +37,32 @@ datasetsSpecialCollection <- function(id, verbose = FALSE) {
   return(result)
 
 }
+
+#' Get datasets by ID.
+#'
+#' @param ids Dataset IDs.
+#' @param verbose Verbose.
+#' @return List of datasets.
+#' @export
+datasets <- function(ids, verbose = FALSE) {
+
+  result <- list()
+
+  for (i in 1:length(ids)) {
+
+    parameters <- list(
+      dasid = ids[i],
+      show = "json"
+    )
+
+    response <- imis_request(parameters, verbose)
+    json <- content(response, "text", encoding = "UTF-8")
+    dataset <- fromJSON(json, simplifyVector = FALSE)
+
+    result[[i]] <- dataset
+
+  }
+
+  return(result)
+
+}
