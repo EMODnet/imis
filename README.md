@@ -5,5 +5,5 @@ R client for IMIS
 ## Installation
 
 ```R
-devtools::install_github("iobis/imis")
+devtools::install_github("EMODnet/imis")
 ```
