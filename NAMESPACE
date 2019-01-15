@@ -2,6 +2,8 @@
 
 export(datasets)
 export(datasetsSpecialCollection)
+export(getcitations)
 import(dplyr)
+import(hlptools)
 import(httr)
 import(jsonlite)

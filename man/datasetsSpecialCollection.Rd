@@ -17,4 +17,3 @@ Datasets data frame.
 \description{
 Get datasets by special collection.
 }
-

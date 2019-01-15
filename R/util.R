@@ -4,7 +4,7 @@ imis_url <- function() {
 
 imis_request <- function(parameters, verbose = FALSE) {
   url <- imis_url()
-  response <- GET(url, user_agent("imis - https://github.com/iobis/imis"), query = parameters)
+    response <- GET(url, user_agent("imis - https://github.com/EMODnet/imis"), query = parameters)
   if (verbose) {
     print(response)
   }

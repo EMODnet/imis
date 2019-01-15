@@ -1,15 +1,18 @@
 Package: imis
 Title: R client for IMIS
 Version: 0.2.0
-Authors@R: person("Pieter", "Provoost", email = "pieterprovoost@gmail.com", role = c("aut", "cre"))
+Authors@R: c(
+  person("Pieter", "Provoost", email = "pieterprovoost@gmail.com", role = c("aut", "cre")),
+  person("Daphnis", "De Pooter", email = "daphnisd@vliz.be", role = "aut")
+  )
 Description: R client for IMIS
+Encoding: UTF-8
 Depends:
     R (>= 3.2.1),
     httr,
     jsonlite,
     dplyr
-Suggests:
-    testthat
+Remotes: Daphnisd/hlptools
 License: MIT
 LazyData: true
-RoxygenNote: 5.0.1
+RoxygenNote: 6.1.1

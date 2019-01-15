@@ -57,9 +57,13 @@ datasets <- function(ids, verbose = FALSE) {
 
     response <- imis_request(parameters, verbose)
     json <- content(response, "text", encoding = "UTF-8")
-    dataset <- fromJSON(json, simplifyVector = FALSE)
+    tryCatch({dataset <- fromJSON(json, simplifyVector = FALSE)},
+             error=function(x){
+               print(paste0("this dataset record does not exist: ", ids[i]))
+               })
 
-    result[[i]] <- dataset
+    if(exists("dataset")){
+    result[[i]] <- dataset}
 
   }
 
