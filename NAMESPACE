@@ -3,6 +3,8 @@
 export(datasets)
 export(datasetsSpecialCollection)
 export(getcitations)
+export(getdaskeywords)
+export(getdasthemes)
 import(dplyr)
 import(hlptools)
 import(httr)
