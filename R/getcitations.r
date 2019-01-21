@@ -1,20 +1,15 @@
-#' Get citations and licence from IMIS based on dasids
+#' Get citations and licence from IMIS using the output of the datasets function
 #'
-#' This function gets the citations and DOIs from IMIS using the dasids
-#' @param dasid mandatory parameter, the dasid of the dataset
+#' This function gets the citations and DOIs from IMIS using the output of the datasets function
+#' @param datasetrecords mandatory parameter, the output of the datasets function
 #' @import dplyr hlptools
 #' @export
 #' @examples
-#' meta <- getcitations(4662)
-#' meta <- getcitations(dasid = c("1884","618", "5780" ))
+#' meta <- getdascitations(datasets(4662))
+#' meta <- getdascitations(datasets(c("1884","618", "5780" )))
 
 
-getcitations <- function (dasid) {
-  dasid <- unique(dasid[!is.na(dasid)])
-  dasid <- dasid[(dasid != "")]
-
-datasetrecords <- datasets(dasid)
-
+getdascitations <- function (datasetrecords) {
 
 for (i in 1:length(datasetrecords)){
   for (j in 1:length(datasetrecords[[i]]$urls)){

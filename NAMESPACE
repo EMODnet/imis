@@ -2,7 +2,9 @@
 
 export(datasets)
 export(datasetsSpecialCollection)
-export(getcitations)
+export(flatdatasetrecord)
+export(getdascitations)
+export(getdascontacts)
 export(getdaskeywords)
 export(getdasthemes)
 import(dplyr)

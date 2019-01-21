@@ -1,20 +1,16 @@
-#' Get the themes from IMIS based on dasids
+#' Get the themes from IMIS using the output of the datasets function
 #'
-#' This function gets the themes associated to  dasids
-#' @param dasid mandatory parameter, the dasid of the dataset
+#' This function gets the themes associated to datasets using the output of the datasets function
+#' @param datasetrecords mandatory parameter, the output of the datasets function
 #' @import dplyr hlptools
 #' @export
 #' @examples
-#' dasthemes <- getdasthemes(4662)
-#' dasthemes <- getdasthemes(dasid = c("1884","618", "5780" ))
+#' dasthemes <- getdasthemes(datasets(4662))
+#' dasthemes <- getdasthemes(datasets(c("1884","618", "5780" )))
 
 
 
-getdasthemes <- function (dasid) {
-  dasid <- unique(dasid[!is.na(dasid)])
-  dasid <- dasid[(dasid != "")]
-
-  datasetrecords <- datasets(dasid)
+getdasthemes <- function (datasetrecords) {
 
 
   for (i in 1:length(datasetrecords)){

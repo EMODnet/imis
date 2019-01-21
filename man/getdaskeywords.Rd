@@ -2,17 +2,17 @@
 % Please edit documentation in R/getkeywords.R
 \name{getdaskeywords}
 \alias{getdaskeywords}
-\title{Get the keywords from IMIS based on dasids}
+\title{Get the keywords from IMIS using the output of the datasets function}
 \usage{
-getdaskeywords(dasid)
+getdaskeywords(datasetrecords)
 }
 \arguments{
-\item{dasid}{mandatory parameter, the dasid of the dataset}
+\item{datasetrecords}{mandatory parameter, the output of the datasets function}
 }
 \description{
-This function gets the keywords associated to  dasids
+This function gets the keywords associated to datasets using the output of the datasets function
 }
 \examples{
-dasthemes <- getdaskeywords(4662)
-dasthemes <- getdaskeywords(dasid = c("1884","618", "5780" ))
+dasthemes <- getdaskeywords(datasets(4662))
+dasthemes <- getdaskeywords(datasets(c("1884","618", "5780" )))
 }

@@ -46,6 +46,9 @@ datasetsSpecialCollection <- function(id, verbose = FALSE) {
 #' @export
 datasets <- function(ids, verbose = FALSE) {
 
+  ids <- unique(ids[!is.na(ids)])
+  ids <- ids[(ids != "")]
+
   result <- list()
 
   for (i in 1:length(ids)) {

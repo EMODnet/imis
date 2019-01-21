@@ -2,17 +2,17 @@
 % Please edit documentation in R/getdatasetthemes.R
 \name{getdasthemes}
 \alias{getdasthemes}
-\title{Get the themes from IMIS based on dasids}
+\title{Get the themes from IMIS using the output of the datasets function}
 \usage{
-getdasthemes(dasid)
+getdasthemes(datasetrecords)
 }
 \arguments{
-\item{dasid}{mandatory parameter, the dasid of the dataset}
+\item{datasetrecords}{mandatory parameter, the output of the datasets function}
 }
 \description{
-This function gets the themes associated to  dasids
+This function gets the themes associated to datasets using the output of the datasets function
 }
 \examples{
-dasthemes <- getdasthemes(4662)
-dasthemes <- getdasthemes(dasid = c("1884","618", "5780" ))
+dasthemes <- getdasthemes(datasets(4662))
+dasthemes <- getdasthemes(datasets(c("1884","618", "5780" )))
 }

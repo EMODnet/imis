@@ -1,20 +1,16 @@
-#' Get the keywords from IMIS based on dasids
+#' Get the keywords from IMIS using the output of the datasets function
 #'
-#' This function gets the keywords associated to  dasids
-#' @param dasid mandatory parameter, the dasid of the dataset
+#' This function gets the keywords associated to datasets using the output of the datasets function
+#' @param datasetrecords mandatory parameter, the output of the datasets function
 #' @import dplyr hlptools
 #' @export
 #' @examples
-#' dasthemes <- getdaskeywords(4662)
-#' dasthemes <- getdaskeywords(dasid = c("1884","618", "5780" ))
+#' dasthemes <- getdaskeywords(datasets(4662))
+#' dasthemes <- getdaskeywords(datasets(c("1884","618", "5780" )))
 
 
 
-getdaskeywords <- function (dasid) {
-  dasid <- unique(dasid[!is.na(dasid)])
-  dasid <- dasid[(dasid != "")]
-
-  datasetrecords <- datasets(dasid)
+getdaskeywords <- function (datasetrecords) {
 
 
   for (i in 1:length(datasetrecords)){
