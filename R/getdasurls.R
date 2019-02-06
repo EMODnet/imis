@@ -2,7 +2,7 @@
 #'
 #' This function gets the themes associated to datasets using the output of the datasets function
 #' @param datasetrecords mandatory parameter, the output of the datasets function
-#' @import dplyr hlptools
+#' @import dplyr
 #' @export
 #' @examples
 #' dasurls <- dataseturls(datasets(4662))
