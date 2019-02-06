@@ -2,7 +2,7 @@
 #'
 #' This function gets the citations and DOIs from IMIS using the output of the datasets function
 #' @param datasetrecords mandatory parameter, the output of the datasets function
-#' @import dplyr hlptools
+#' @import dplyr
 #' @export
 #' @examples
 #' meta <- getdascitations(datasets(4662))
