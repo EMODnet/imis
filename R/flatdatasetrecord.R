@@ -22,7 +22,7 @@ daskeywords <- getdaskeywords(datasetrecords)
 dascontacts <- getdascontacts(datasetrecords)
 
 
-dastheme2 <- aggregate(theme0  ~ dasid, data = dastheme, paste, collapse = " , ")
+dastheme2 <- aggregate(theme  ~ dasid, data = dastheme, paste, collapse = " , ")
 daskeywords2 <- aggregate(keyword  ~ dasid, data = daskeywords, paste, collapse = " , ")
 dascontacts2 <- aggregate(contact  ~ dasid, data = dascontacts, paste, collapse = " , ")
 

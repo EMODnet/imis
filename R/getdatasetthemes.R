@@ -20,8 +20,8 @@ getdasthemes <- function (datasetrecords) {
           return(list(
             dasid = unlist(datasetrecords[[i]]$datasetrec$DasID),
             title = unlist(datasetrecords[[i]]$datasetrec$StandardTitle),
-            theme = unlist(datasetrecords[[i]]$dasthemes[[j]]$DasTheme),
-            theme0 = unlist(datasetrecords[[i]]$dasthemes[[j]]$DasTheme0)
+            theme2 = unlist(datasetrecords[[i]]$dasthemes[[j]]$DasTheme),
+            theme = unlist(datasetrecords[[i]]$dasthemes[[j]]$DasTheme0)
           ))})
 
       r1 <-bind_rows(unlist(l))
@@ -32,9 +32,9 @@ getdasthemes <- function (datasetrecords) {
       }
   }}
 
-  returndatasets <- returndatasets %>% fncols(c("dasid","title","theme", "theme0"))
+  returndatasets <- returndatasets %>% fncols(c("dasid","title","theme", "theme2"))
 
-  datasetthemes <- returndatasets %>% select (dasid, title, theme,theme0) %>% distinct()
+  datasetthemes <- returndatasets %>% select (dasid, title, theme,theme2) %>% distinct()
 
   return(datasetthemes)
 }
