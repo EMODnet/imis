@@ -8,7 +8,6 @@ Installing `IMIS` requires the `devtools` package:
 
 ```R
 install.packages("devtools")
-devtools::install_github("Daphnisd/hlptools") 
 devtools::install_github("EMODnet/imis")
 ```
 
