@@ -2,7 +2,7 @@
 #'
 #' This generates a flat table of an IMIS dataset record using DasIDs
 #' @param datasetrecords mandatory parameter, the output of the datasets function
-#' @import dplyr hlptools
+#' @import dplyr
 #' @export
 #' @examples
 #' dasrecord <- flatdatasetrecord(dasid = 4662)
