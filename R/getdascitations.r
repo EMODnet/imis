@@ -48,14 +48,14 @@ returndatasets <- returndatasets %>% fncols(c("dasid","title","url","urltype","D
 
 c1 <- returndatasets %>% select (dasid, title, licence,imiscitation,accessconstraint,abstract, description) %>% distinct()
 c2 <- returndatasets %>% filter (urltype == "DOI" ) %>% select (dasid, url) %>% distinct()
-c3 <- returndatasets %>% filter (!is.na(DOI)) %>% group_by(dasid) %>% summarise (selectdoi = max(DOI)) %>% ungroup()
-c4 <- returndatasets %>% select (dasid, DOI, doicitation) %>% filter (DOI %in% c3$selectdoi) %>% distinct_()
+c3 <- suppressWarnings(returndatasets %>% filter (!is.na(DOI)) %>% group_by(dasid) %>% summarise (selectdoi = max(DOI)) %>% ungroup())
+c4 <- returndatasets %>% select (dasid, DOI, doicitation) %>% filter (DOI %in% c3$selectdoi) %>% distinct()
 
 datasets <- c1  %>% left_join(c2, by="dasid") %>% left_join(c4, by="dasid") %>%
   mutate(citation = if_else(!is.na(doicitation),paste0(doicitation, " https://doi.org/10.14284/",DOI),
                             if_else(!is.na(url), paste0(imiscitation, " ",url), imiscitation)),
-         DOI = if_else(!is.na(DOI),paste0(" https://doi.org/10.14284/",DOI),
-                        if_else(!is.na(url), url, ""))) %>%
+         DOI = ifelse(!is.na(DOI),paste0(" https://doi.org/10.14284/",DOI),
+                      ifelse(!is.na(url), url, NA))) %>%
   select (dasid, title, citation, DOI, licence, accessconstraint,abstract, description)
 
 return(datasets)
