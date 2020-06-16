@@ -16,6 +16,5 @@ devtools::install_github("vlizBE/imis")
 ## Usage
 
 ```R
-flatdatasetrecord (4447)
-flatdatasetrecord (c("4447","5444"))
+flatdatasetrecord(4447)
 ```
