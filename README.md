@@ -1,6 +1,7 @@
 # imis
 
-R client for IMIS
+R client for the Integrated Marine Information System (IMIS)
+http://www.vliz.be/imis?page=webservices
 
 ## Installation
 
@@ -8,7 +9,7 @@ Installing `IMIS` requires the `devtools` package:
 
 ```R
 install.packages("devtools")
-devtools::install_github("EMODnet/imis")
+devtools::install_github("vlizBE/imis")
 ```
 
 
@@ -18,4 +19,3 @@ devtools::install_github("EMODnet/imis")
 flatdatasetrecord (4447)
 flatdatasetrecord (c("4447","5444"))
 ```
-
