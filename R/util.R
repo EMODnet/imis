@@ -1,10 +1,10 @@
 imis_url <- function() {
-  getOption("imis_url", "http://www.vliz.be/nl/imis")
+  getOption("imis_url", "http://www.vliz.be/en/imis")
 }
 
 imis_request <- function(parameters, verbose = FALSE) {
   url <- imis_url()
-    response <- GET(url, user_agent("imis - https://github.com/EMODnet/imis"), query = parameters)
+    response <- GET(url, user_agent("IMIS R client (https://github.com/vlizBE/imis)"), query = parameters)
   if (verbose) {
     print(response)
   }
